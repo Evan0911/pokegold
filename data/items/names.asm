@@ -24,7 +24,7 @@ ItemNames::
 	li "FIRE STONE"
 	li "THUNDERSTONE"
 	li "WATER STONE"
-	li "TERU-SAMA"
+	li "POCKET PC"
 	li "HP UP"
 	li "PROTEIN"
 	li "IRON"
@@ -243,6 +243,9 @@ ItemNames::
 	li "TM48"
 	li "TM49"
 	li "TM50"
+	li "TM51"
+	li "TM52"
+	li "TM53"
 	assert_list_length NUM_ITEMS + NUM_TMS + 2 ; count ITEM_C3 and ITEM_DC
 	li "HM01"
 	li "HM02"
@@ -252,9 +255,6 @@ ItemNames::
 	li "HM06"
 	li "HM07"
 	assert_list_length NUM_ITEMS + NUM_TMS + 2 + NUM_HMS ; count ITEM_C3 and ITEM_DC
-	li "TERU-SAMA"
-	li "TERU-SAMA"
-	li "TERU-SAMA"
 	li "TERU-SAMA"
 	li "TERU-SAMA"
 	li "TERU-SAMA"

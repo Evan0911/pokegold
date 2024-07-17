@@ -30,7 +30,7 @@
 	const FIRE_STONE   ; 16
 	const THUNDERSTONE ; 17
 	const WATER_STONE  ; 18
-	const ITEM_19      ; 19
+	const POCKET_PC    ; 19
 	const HP_UP        ; 1a
 	const PROTEIN      ; 1b
 	const IRON         ; 1c
@@ -269,6 +269,9 @@ DEF TM01 EQU const_value
 	add_tm FIRE_PUNCH   ; f0
 	add_tm FURY_CUTTER  ; f1
 	add_tm NIGHTMARE    ; f2
+	add_tm THUNDERBOLT  ; f3
+	add_tm ICE_BEAM 		; f4
+	add_tm FLAMETHROWER ; f5
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm
