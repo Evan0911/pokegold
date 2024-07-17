@@ -6765,12 +6765,12 @@ GiveExperiencePoints:
 	add hl, bc
 	ld a, [wPlayerID]
 	cp [hl]
-	jr nz, .boosted
+	;jr nz, .boosted
 	inc hl
 	ld a, [wPlayerID + 1]
 	cp [hl]
 	ld a, 0
-	jr z, .no_boost
+	;jr z, .no_boost
 
 .boosted
 	call BoostExp
@@ -7034,16 +7034,18 @@ GiveExperiencePoints:
 	jp ResetBattleParticipants
 
 BoostExp:
-; Multiply experience by 1.5x
+; Multiply experience by 5x
 	push bc
 ; load experience value
 	ldh a, [hProduct + 2]
 	ld b, a
 	ldh a, [hProduct + 3]
 	ld c, a
-; halve it
-	srl b
-	rr c
+; do x4
+	sla c
+	rl b
+	sla c
+	rl b
 ; add it back to the whole exp value
 	add c
 	ldh [hProduct + 3], a
@@ -7057,11 +7059,11 @@ Text_MonGainedExpPoint:
 	text_far Text_Gained
 	text_asm
 	ld hl, ExpPointsText
-	ld a, [wStringBuffer2 + 2] ; IsTradedMon
-	and a
-	ret z
+	;ld a, [wStringBuffer2 + 2] ; IsTradedMon
+	;and a
+	;ret z
 
-	ld hl, BoostedExpPointsText
+	;ld hl, BoostedExpPointsText
 	ret
 
 BoostedExpPointsText:
