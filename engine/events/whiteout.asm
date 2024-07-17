@@ -14,7 +14,6 @@ Script_Whiteout:
 	special HealParty
 	checkflag ENGINE_BUG_CONTEST_TIMER
 	iftrue .bug_contest
-	callasm HalveMoney
 	callasm GetWhiteoutSpawn
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
@@ -40,20 +39,6 @@ BattleBGMap:
 	ld b, SCGB_BATTLE_GRAYSCALE
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
-	ret
-
-HalveMoney:
-; Halve the player's money.
-	ld hl, wMoney
-	ld a, [hl]
-	srl a
-	ld [hli], a
-	ld a, [hl]
-	rra
-	ld [hli], a
-	ld a, [hl]
-	rra
-	ld [hl], a
 	ret
 
 GetWhiteoutSpawn:
