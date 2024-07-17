@@ -779,6 +779,8 @@ wBattleParticipantsNotFainted::
 ; Backed up if the enemy switches.
 ; All bits cleared if the enemy faints.
 	db
+wIsCurrentPokemonExp::
+	db
 
 wTypeModifier::
 ; >10: super-effective
@@ -984,7 +986,7 @@ wLastEnemyMove:: db
 wPlayerFutureSightCount:: db
 wEnemyFutureSightCount:: db
 
-ds 8
+ds 7
 
 wPlayerFutureSightDamage:: dw
 wEnemyFutureSightDamage:: dw
