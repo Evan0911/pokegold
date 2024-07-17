@@ -242,15 +242,15 @@ PokeBallEffect:
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jp z, .catch_without_fail
-	ld a, [wCurItem]
-	cp MASTER_BALL
-	jp z, .catch_without_fail
-	ld a, [wCurItem]
-	cp POKE_BALL
-	jp z, .catch_without_fail
-	ld a, [wCurItem]
-	ld c, a
-	ld hl, BallMultiplierFunctionTable
+	;ld a, [wCurItem]
+	;cp MASTER_BALL
+	jp .catch_without_fail
+	;ld a, [wCurItem]
+	;cp POKE_BALL
+	;jp z, .catch_without_fail
+	;ld a, [wCurItem]
+	;ld c, a
+	;ld hl, BallMultiplierFunctionTable
 
 .get_multiplier_loop
 	ld a, [hli]
