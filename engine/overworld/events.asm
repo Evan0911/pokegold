@@ -281,9 +281,9 @@ CheckTrainerEvent:
 	call CheckTrainerBattle
 	jr nc, .nope
 
-	ld a, PLAYEREVENT_SEENBYTRAINER
-	scf
-	ret
+	; ld a, PLAYEREVENT_SEENBYTRAINER
+	; scf
+	; ret
 
 .nope
 	xor a
