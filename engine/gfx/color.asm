@@ -46,6 +46,9 @@ Unused_CheckShininess:
 CheckShininess:
 ; Return carry if the DVs at hl are all 10 or higher.
 
+	ld l, c
+	ld h, b
+
 ; Attack
 	ld a, [hl]
 	cp 10 << 4
