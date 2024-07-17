@@ -246,6 +246,9 @@ PokeBallEffect:
 	cp MASTER_BALL
 	jp z, .catch_without_fail
 	ld a, [wCurItem]
+	cp POKE_BALL
+	jp z, .catch_without_fail
+	ld a, [wCurItem]
 	ld c, a
 	ld hl, BallMultiplierFunctionTable
 
