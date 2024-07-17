@@ -293,7 +293,7 @@ JoyWaitAorB::
 .loop
 	call DelayFrame
 	call GetJoypad
-	ldh a, [hJoyPressed]
+	ldh a, [hJoyDown]
 	and A_BUTTON | B_BUTTON
 	ret nz
 	call UpdateTimeAndPals
@@ -411,7 +411,7 @@ PromptButton::
 .input_wait_loop
 	call .blink_cursor
 	call JoyTextDelay
-	ldh a, [hJoyPressed]
+	ldh a, [hJoyDown]
 	and A_BUTTON | B_BUTTON
 	jr nz, .received_input
 	call UpdateTimeAndPals

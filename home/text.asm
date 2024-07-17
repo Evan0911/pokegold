@@ -272,7 +272,7 @@ ENDM
 
 .place
 	ld [hli], a
-	call PrintLetterDelay
+	; call PrintLetterDelay
 	jp NextChar
 
 MACRO print_name
