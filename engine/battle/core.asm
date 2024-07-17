@@ -2095,6 +2095,9 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	; Preserve bits of non-fainted participants
 	ld a, [wBattleParticipantsNotFainted]
 	ld d, a
+	xor a
+	inc a
+	ld [wIsCurrentPokemonExp], a
 	push de
 	call GiveExperiencePoints
 	pop de
@@ -2107,6 +2110,8 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	ld a, d
 	xor %00111111
 	ld [wBattleParticipantsNotFainted], a
+	xor a
+	ld [wIsCurrentPokemonExp], a
 	call GiveExperiencePoints
 	pop af
 	ld [wBattleParticipantsNotFainted], a
@@ -6669,7 +6674,7 @@ GiveExperiencePoints:
 	ld a, [wLinkMode]
 	and a
 	ret nz
-
+	
 	xor a
 	ld [wCurPartyMon], a
 	ld bc, wPartyMon1Species
@@ -6796,8 +6801,12 @@ GiveExperiencePoints:
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
 	call GetNickname
+	ld a, [wIsCurrentPokemonExp]
+	and a
+	jr z, .skipExpText
 	ld hl, Text_MonGainedExpPoint
 	call PrintText
+.skipExpText
 	ld a, [wStringBuffer2 + 1]
 	ldh [hQuotient + 3], a
 	ld a, [wStringBuffer2]
