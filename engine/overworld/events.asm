@@ -272,6 +272,14 @@ PlayerEvents:
 
 	ld [wScriptRunning], a
 	call DoPlayerEvent
+
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .ok2
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	farcall UpdatePlayerSprite
+.ok2
 	scf
 	ret
 
