@@ -8,10 +8,10 @@ SaveMenu:
 	ld hl, WouldYouLikeToSaveTheGameText
 	call SaveTheGame_yesorno
 	jr nz, .refused
-	call AskOverwriteSaveFile
+	;call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
-	call SavingDontTurnOffThePower
+	call SavedTheGame
 	call ResumeGameLogic
 	call ExitMenu
 	and a
@@ -52,7 +52,7 @@ ChangeBoxSaveGame:
 	ld a, e
 	ld [wCurBox], a
 	call LoadBox
-	call SavingDontTurnOffThePower
+	call SavedTheGame
 	call ResumeGameLogic
 	and a
 	ret
@@ -64,7 +64,7 @@ Link_SaveGame:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
-	call SavingDontTurnOffThePower
+	call SavedTheGame
 	call ResumeGameLogic
 	and a
 
@@ -122,7 +122,7 @@ StartMoveMonWOMail_SaveGame:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
-	call SavingDontTurnOffThePower
+	call SavedTheGame
 	call ResumeGameLogic
 	and a
 	ret
@@ -224,32 +224,11 @@ CompareLoadedAndSavedPlayerID:
 	cp c
 	ret
 
-SavingDontTurnOffThePower:
-	; Prevent joypad interrupts
-	xor a
-	ldh [hJoypadReleased], a
-	ldh [hJoypadPressed], a
-	ldh [hJoypadSum], a
-	ldh [hJoypadDown], a
-	; Save the text speed setting to the stack
-	ld a, [wOptions]
-	push af
-	; Set the text speed to medium
-	ld a, TEXT_DELAY_MED
-	ld [wOptions], a
-	; SAVING... DON'T TURN OFF THE POWER.
-	ld hl, SavingDontTurnOffThePowerText
-	call PrintText
-	; Restore the text speed setting
-	pop af
-	ld [wOptions], a
-	; Wait for 16 frames
-	ld c, 16
-	call DelayFrames
+SavedTheGame:	
 	call _SaveGameData
 	; wait 32 frames
 	ld c, 32
-	call DelayFrames
+	;call DelayFrames
 	; copy the original text speed setting to the stack
 	ld a, [wOptions]
 	push af
@@ -267,9 +246,8 @@ SavingDontTurnOffThePower:
 	call WaitSFX
 	; wait 30 frames
 	ld c, 30
-	call DelayFrames
+	;call DelayFrames
 	ret
-
 _SaveGameData:
 	ld a, TRUE
 	ld [wSaveFileExists], a
@@ -1052,10 +1030,6 @@ Checksum:
 
 WouldYouLikeToSaveTheGameText:
 	text_far _WouldYouLikeToSaveTheGameText
-	text_end
-
-SavingDontTurnOffThePowerText:
-	text_far _SavingDontTurnOffThePowerText
 	text_end
 
 SavedTheGameText:
