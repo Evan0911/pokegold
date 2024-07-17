@@ -2253,6 +2253,7 @@ WinTrainerBattle:
 	call PrintWinLossText
 .skip_win_loss_text
 
+	call .DoubleReward
 	ld a, [wAmuletCoin]
 	and a
 	call nz, .DoubleReward
