@@ -1711,11 +1711,13 @@ Script_LoadPocketPC:
 	special UpdateTimePals
 	special PokemonCenterPC
 	reloadmappart
+	closetext
 	end
 
 Script_LoadPocketPC_Register:
 	special PokemonCenterPC
 	reloadmappart
+	closetext
 	end
 
 Script_GetOnBike:
