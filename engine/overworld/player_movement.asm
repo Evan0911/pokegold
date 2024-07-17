@@ -353,6 +353,14 @@ DoPlayerMovement::
 
 	ld a, STEP_WALK
 	call .DoStep
+
+	ldh a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
+	jr nz, .ensurenormalsurf
+	jr .fast
+.ensurenormalsurf
+
 	scf
 	ret
 
