@@ -135,6 +135,9 @@ MartGoldenrod5F:
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
+	db TM_THUNDERBOLT
+	db TM_FLAMETHROWER
+	db TM_ICE_BEAM
 	db -1 ; end
 
 MartOlivine:
