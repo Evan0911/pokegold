@@ -177,12 +177,12 @@ FishGroups:
 .Qwilfish_NoSwarm_Old:
 .Qwilfish_Old:
 	db  70 percent + 1, MAGIKARP,   10
-	db  85 percent + 1, MAGIKARP,   10
+	db  85 percent + 1, QWILFISH,   10
 	db 100 percent,     TENTACOOL,  10
 .Qwilfish_NoSwarm_Good:
 .Qwilfish_Good:
 	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     TENTACOOL,  20
+	db  70 percent,     QWILFISH,   20
 	db  90 percent + 1, TENTACOOL,  20
 	db 100 percent,     time_group 20
 .Qwilfish_NoSwarm_Super:
@@ -194,12 +194,12 @@ FishGroups:
 
 .Remoraid_Old:
 	db  70 percent + 1, MAGIKARP,   10
-	db  85 percent + 1, MAGIKARP,   10
+	db  85 percent + 1, REMORAID,   10
 	db 100 percent,     POLIWAG,    10
 .Remoraid_Good:
 	db  35 percent,     MAGIKARP,   20
 	db  70 percent,     POLIWAG,    20
-	db  90 percent + 1, POLIWAG,    20
+	db  90 percent + 1, REMORAID,    20
 	db 100 percent,     time_group 6
 .Remoraid_Super:
 	db  40 percent,     POLIWAG,    40
