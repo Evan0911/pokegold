@@ -38,11 +38,7 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons SLOWPOKE_WELL_B2F
-	IF DEF(_GOLD)
-	db 4 percent ; encounter rate
-	ELIF DEF(_SILVER)
 	db 2 percent ; encounter rate
-	ENDC
 	db 15, SLOWPOKE
 	db 20, SLOWPOKE
 	db 20, SLOWBRO
@@ -169,15 +165,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ROUTE_41
 	db 6 percent ; encounter rate
-	IF DEF(_GOLD)
 	db 20, TENTACOOL
 	db 20, TENTACRUEL
 	db 20, MANTINE
-	ELIF DEF(_SILVER)
-	db 20, TENTACOOL
-	db 20, TENTACRUEL
-	db 15, TENTACOOL
-	ENDC
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_42
@@ -251,11 +241,7 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons LAKE_OF_RAGE
-	IF DEF(_GOLD)
 	db 4 percent ; encounter rate
-	ELIF DEF(_SILVER)
-	db 6 percent ; encounter rate
-	ENDC
 	db 15, MAGIKARP
 	db 10, MAGIKARP
 	db 15, GYARADOS

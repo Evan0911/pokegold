@@ -1395,6 +1395,11 @@ _MartHowManyText::
 	text "How many?"
 	done
 
+AlreadyHaveTMText::
+	text "You already have"
+	line "that TM."
+	done
+
 _MartFinalPriceText::
 	text_decimal wItemQuantityChange, 1, 2
 	text " @"
@@ -1602,3 +1607,8 @@ _SlotsBetHowManyCoinsText::
 	text "Bet how many"
 	line "coins?"
 	done
+
+_CantDepositText::
+	text "Can't deposit"
+	line "this item."
+	prompt
