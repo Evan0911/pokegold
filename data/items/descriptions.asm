@@ -115,7 +115,7 @@ ItemDescriptions:
 	dw EverStoneDesc
 	dw SpellTagDesc
 	dw RageCandyBarDesc
-	dw TeruSama9Desc
+	dw GSBallDesc
 	dw TeruSama10Desc
 	dw MiracleSeedDesc
 	dw ThickClubDesc
@@ -704,8 +704,9 @@ RageCandyBarDesc:
 	db   "Restores #MON"
 	next "HP by 20.@"
 
-TeruSama9Desc:
-	db   "?@"
+GSBallDesc:
+	db   "The mysterious"
+	next "BALL.@"
 
 TeruSama10Desc:
 	db   "?@"

@@ -133,6 +133,11 @@ sHallOfFame{d:n}:: hall_of_fame sHallOfFame{d:n}
 endr
 sHallOfFameEnd::
 
+SECTION "SRAM Crystal Data", SRAM
+
+sGSBallFlag:: db
+sGSBallFlagBackup:: db
+
 
 SECTION "Backup Save 2", SRAM
 

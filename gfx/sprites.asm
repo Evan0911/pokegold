@@ -104,3 +104,4 @@ SilverTrophySpriteGFX::        INCBIN "gfx/sprites/silver_trophy.2bpp"
 SECTION "Sprites 3", ROMX
 
 ChrisRunSpriteGFX::            INCBIN "gfx/sprites/chris_run.2bpp"
+KurtOutsideSpriteGFX::         INCBIN "gfx/sprites/kurt_outside.2bpp"

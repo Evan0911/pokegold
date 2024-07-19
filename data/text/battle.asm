@@ -1081,3 +1081,10 @@ IgnoredOrders2Text:
 	text "<USER>"
 	line "ignored orders!"
 	prompt
+
+WildCelebiAppearedText:
+	text "Wild @"
+	text_ram wEnemyMonNickname
+	text_start
+	line "appeared!"
+	prompt

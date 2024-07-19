@@ -266,6 +266,7 @@ _SaveGameData:
 	call SaveBackupChecksum
 	call UpdateStackTop
 	farcall BackupPartyMonMail
+	farcall BackupGSBallFlag
 	farcall SaveRTC
 	ret
 
@@ -520,6 +521,7 @@ TryLoadSaveFile:
 	call LoadPokemonData
 	call LoadBox
 	farcall RestorePartyMonMail
+	farcall RestoreGSBallFlag
 	farcall RestoreMysteryGift
 	call ValidateBackupSave
 	call SaveBackupOptions
@@ -536,6 +538,7 @@ TryLoadSaveFile:
 	call LoadBackupPokemonData
 	call LoadBox
 	farcall RestorePartyMonMail
+	farcall RestoreGSBallFlag
 	farcall RestoreMysteryGift
 	call ValidateSave
 	call SaveOptions
@@ -1055,3 +1058,35 @@ ChangeBoxSaveText:
 MoveMonWOMailSaveText:
 	text_far _MoveMonWOMailSaveText
 	text_end
+
+BackupGSBallFlag:
+	ld a, BANK(sGSBallFlag)
+	call OpenSRAM
+	ld a, [sGSBallFlag]
+	push af
+	ld a, BANK(sGSBallFlagBackup)
+	call OpenSRAM
+	pop af
+	ld [sGSBallFlagBackup], a
+	call CloseSRAM
+	ret
+
+RestoreGSBallFlag:
+	ld a, BANK(sGSBallFlagBackup)
+	call OpenSRAM
+	ld a, [sGSBallFlagBackup]
+	push af
+	ld a, BANK(sGSBallFlag)
+	call OpenSRAM
+	pop af
+	ld [sGSBallFlag], a
+	call CloseSRAM
+	ret
+
+ClearGSBallFlag:
+	ld a, BANK(sGSBallFlag)
+	call OpenSRAM
+	xor a
+	ld [sGSBallFlag], a
+	call CloseSRAM
+	ret

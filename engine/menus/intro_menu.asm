@@ -134,6 +134,8 @@ endc
 
 	farcall DeletePartyMonMail
 
+	farcall ClearGSBallFlag
+
 	call ResetGameTime
 	ret
 

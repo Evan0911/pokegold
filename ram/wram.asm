@@ -2451,8 +2451,9 @@ wTradeFlags:: flag_array NUM_NPC_TRADES
 
 wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
+wFarfetchdPosition:: db
 
-	ds 14
+	ds 13
 
 wPokecenter2FSceneID::                            db
 wTradeCenterSceneID::                             db
@@ -2486,6 +2487,7 @@ wRoute36NationalParkGateSceneID::                 db
 wAzaleaTownSceneID::                              db
 wGoldenrodGymSceneID::                            db
 wGoldenrodMagnetTrainStationSceneID::             db
+wGoldenrodPokecenter1FSceneID::                   db
 wOlivineCitySceneID::                             db
 wRoute34SceneID::                                 db
 wEcruteakTinTowerEntranceSceneID::                db
@@ -2513,8 +2515,9 @@ wVermilionPortSceneID::                           db
 wFastShip1FSceneID::                              db
 wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
+wRoute34IlexForestGateSceneID::					  db
 
-	ds 197
+	ds 193
 
 wEventFlags:: flag_array NUM_EVENTS
 
@@ -2542,6 +2545,12 @@ wCurBox:: db
 wBoxNames:: ds BOX_NAME_LENGTH * NUM_BOXES
 
 	ds 2
+
+wCelebiEvent::
+	; bit 2: forest is restless
+	db
+
+	ds 1
 
 wBikeFlags::
 ; bit 0: using strength

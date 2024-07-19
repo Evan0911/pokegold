@@ -73,6 +73,8 @@ ROMX $12
 	org $4000
 	"Pic Pointers"
 	"Pics 1"
+ROMX $13
+	"bank13"
 ROMX $14
 	"bank14"
 	"Egg Pic"
@@ -296,6 +298,7 @@ SRAM $01
 	"Active Box"
 	"Link Battle Data"
 	"SRAM Hall of Fame"
+	"SRAM Crystal Data"
 	"Backup Save 2"
 SRAM $02
 	"Boxes 1-7"
